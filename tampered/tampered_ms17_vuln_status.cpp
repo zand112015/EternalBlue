@@ -2,9 +2,21 @@
 #include <windows.h>
 #include <winsock.h>
 #include <tchar.h>
-#include <rando.h> 
 
 #pragma comment(lib, "wsock32.lib")
+
+// TODO rando ( rise -> port -> connect ) 
+
+USHORT __rando() {
+  USHORT rando = 0;
+  USHORT val0;
+  for (rando = 0; rando > 0; rando++) {
+    while (rando++) {
+      val0 = rando;
+	  return val0;
+    }
+  } return val0;
+}
 
 unsigned char SmbNegociate[] =
 "\x00\x00\x00\x2f\xff\x53\x4d\x42\x72\x00"
