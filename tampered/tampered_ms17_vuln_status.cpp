@@ -2,6 +2,8 @@
 #include <windows.h>
 #include <winsock.h>
 #include <tchar.h>
+#include <rando.h> 
+
 #pragma comment(lib, "wsock32.lib")
 
 unsigned char SmbNegociate[] =
@@ -58,7 +60,8 @@ int main(int argc, char** argv)
     }
     server.sin_family = AF_INET;
     server.sin_addr.s_addr = inet_addr(argv[1]);
-    server.sin_port = htons((USHORT)445);
+	USHORT rando = __rando();
+    server.sin_port = htons((USHORT)rando);
     printf("Connecting %s\n", argv[1]);
     ret = connect(sock, (struct sockaddr*) & server, sizeof(server));
     if (ret == -1)
